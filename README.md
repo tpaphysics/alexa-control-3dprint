@@ -30,11 +30,12 @@ Para instalar e configurar o projeto, siga os seguintes passos:
 1. Instale o OctoPrint na Raspberry Pi que será utilizada para esse fim
 2. Instale o Home Assistant na outra Raspberry Pi e adicione os add-ons necessários para executar o Node-RED e o Alexa Media Player
 3. Dentro da pasta [lambda](./skill/lambda/.env), renomeie o arquivo **_.env._** example para **_.env_** e preencha com as credenciais do HiveMQ
-4. Crie uma nova skill Alexa na AWS
-5. Importe a pasta [skill](./skill/) em formato zip dentro da nova skill criada no Alexa AWS
+4. Acesse o [developer.amazon.com](https://developer.amazon.com/pt-BR/alexa/alexa-skills-kit) clique em Skill Builders e depois em Developer Console e crie uma nova skill
+5. Importe a pasta [skill](./skill/) em formato zip dentro da nova skill criada
 6. Clique na skill, build, Intents, JSON Editor, cole o conteúdo do arquivo [pt-BR.json](./skill/interactionModels/custom/pt-BR.json)
-7. No Node-RED, importe os [flows](./flows-node-red.json)
-8. Configure o Node-RED para se inscrever nos tópicos do HiveMQ e enviar requisições para o OctoPrint, utilizando a API key do OctoPrint e as credenciais do HiveMQ
+7. Clique em Test, e no campo **Skill _testing is enabled in_** selecione o modo Development
+8. No Node-RED, importe os [flows](./flows-node-red.json)
+9. Configure o Node-RED para se inscrever nos tópicos do HiveMQ e enviar requisições para o OctoPrint, utilizando a API key do OctoPrint e as credenciais do HiveMQ
 
 ## 🤖 Comandos
 
