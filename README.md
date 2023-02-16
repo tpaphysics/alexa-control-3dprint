@@ -89,7 +89,7 @@ Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](.
 
 ## 📞 Contato
 
-<a href="https://github.com/seu-usuario">
+<a href="https://github.com/tpaphysics">
   <img src="https://avatars.githubusercontent.com/u/46402647?s=400&u=5b00ec492908116235f3d0c6eee80b94840b2339&v=4" alt="Foto de perfil" width="80" style="border-radius:50%">
 </a>
 <br>
