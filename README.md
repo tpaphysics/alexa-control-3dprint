@@ -13,7 +13,7 @@
 
 Este é um projeto que permite controlar uma impressora 3D por meio de comandos de voz da Alexa, utilizando uma skill personalizada. A skill é integrada ao HiveMQ, que permite enviar mensagens para tópicos específicos de um broker MQTT. O Node-RED, que roda como add-on no Home Assistant, é configurado para se inscrever nesses tópicos e, quando recebe uma mensagem, envia uma requisição local para a [API do OctoPrint](https://docs.octoprint.org/en/master/api/index.html) para controlar a impressora.
 
-# 📋 Pré-requisitos
+## 📋 Pré-requisitos
 
 Antes de iniciar o projeto, é necessário ter os seguintes requisitos:
 
@@ -23,7 +23,7 @@ Antes de iniciar o projeto, é necessário ter os seguintes requisitos:
 - Uma conta no HiveMQ Cloud para enviar mensagens para os tópicos
 - Conhecimento básico em Node-RED e automação residencial
 
-# 🔧 Instalação
+## 🔧 Instalação
 
 Para instalar e configurar o projeto, siga os seguintes passos:
 
