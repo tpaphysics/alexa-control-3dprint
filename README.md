@@ -42,7 +42,7 @@ Para instalar e configurar o projeto, siga os seguintes passos:
 Diga,
 
 ```
-ALEXA CONTROLAR COMPUTADOR
+ALEXA CONTROLAR IMPRESSORA
 ```
 
 Ela responderá:
