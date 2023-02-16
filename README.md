@@ -1,5 +1,3 @@
-# <center> Controlar a Impressora 3D com a Alexa 👨‍💻 </center>
-
 <p align="center">
   <a href="https://www.amazon.com.br/s?k=alexa"><img src="https://img.shields.io/badge/-Alexa-00CAFF?style=flat-square&logo=amazon-alexa&logoColor=white"></a>
   <a href="https://www.home-assistant.io/"><img src="https://img.shields.io/badge/-Home%20Assistant-41BDF5?style=flat-square&logo=home-assistant&logoColor=white"></a>
@@ -86,7 +84,7 @@ Você poderá dizer:
 
 ## 📝 Licença
 
-Este projeto está licenciado sob a Licença [nome da licença]. Consulte o arquivo [LICENSE](./LICENSE) para obter mais informações.
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para obter mais informações.
 
 ## 📞 Contato
 
