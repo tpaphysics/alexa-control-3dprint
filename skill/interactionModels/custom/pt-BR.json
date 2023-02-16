@@ -1,0 +1,150 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "controlar impressora",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "não"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "HotBedIntent",
+          "slots": [
+            {
+              "name": "temperature",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "samples": [
+            "bed {temperature}",
+            "cama {temperature} ",
+            "cama {temperature} graus"
+          ]
+        },
+        {
+          "name": "HotEndIntent",
+          "slots": [
+            {
+              "name": "temperature",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "samples": [
+            "hot end {temperature} graus",
+            "bico {temperature} graus",
+            "bico {temperature} "
+          ]
+        },
+        {
+          "name": "CoolDownIntent",
+          "slots": [],
+          "samples": [
+            "esfriar componentes",
+            "desativar",
+            "esfriar",
+            "esfriar impressora"
+          ]
+        },
+        {
+          "name": "MoveAxisPositiveIntent",
+          "slots": [
+            {
+              "name": "axis",
+              "type": "VOGAL"
+            },
+            {
+              "name": "distance",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "samples": [
+            "{axis} {distance}"
+          ]
+        },
+        {
+          "name": "MoveAxisNegativeIntent",
+          "slots": [
+            {
+              "name": "axis",
+              "type": "VOGAL"
+            },
+            {
+              "name": "distance",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "samples": [
+            "{axis} menos {distance}"
+          ]
+        },
+        {
+          "name": "AutoHomeIntent",
+          "slots": [],
+          "samples": [
+            "fazer auto home",
+            "auto home"
+          ]
+        },
+        {
+          "name": "StatusIntent",
+          "slots": [],
+          "samples": [
+            "informações",
+            "status",
+            "informar status"
+          ]
+        },
+        {
+          "name": "HomeAxisIntent",
+          "slots": [
+            {
+              "name": "axis",
+              "type": "VOGAL"
+            }
+          ],
+          "samples": [
+            "home do eixo {axis}",
+            "home {axis}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "z"
+              }
+            },
+            {
+              "name": {
+                "value": "y"
+              }
+            },
+            {
+              "name": {
+                "value": "x"
+              }
+            }
+          ],
+          "name": "VOGAL"
+        }
+      ]
+    }
+  },
+  "version": "27"
+}
