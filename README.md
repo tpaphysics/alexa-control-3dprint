@@ -83,6 +83,10 @@ Você poderá dizer:
 
 - `Status`
 
+## **🌞 Considerações**
+
+Rode a Skill em modo de desenvolvimento, não submeta a skill para Amazon.
+
 ## 📝 Licença
 
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para obter mais informações.
