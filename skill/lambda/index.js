@@ -40,26 +40,33 @@ const MoveAxisPositiveIntentHandler = {
   canHandle(handlerInput) {
     return (
       Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
-      Alexa.getIntentName(handlerInput.requestEnvelope) === "MoveAxisPositiveIntent"
+      Alexa.getIntentName(handlerInput.requestEnvelope) ===
+        "MoveAxisPositiveIntent"
     );
   },
   handle(handlerInput) {
-    const axis =
-      handlerInput.requestEnvelope.request.intent.slots.axis.value;
+    const axis = handlerInput.requestEnvelope.request.intent.slots.axis.value;
     const distance =
       handlerInput.requestEnvelope.request.intent.slots.distance.value;
-      
-      let speakOutput;
-      if( (axis === "X" || axis === "Y" || axis === "Z") && ( distance >= 0 && distance <= 5)  ){
-          speakOutput = `Movendo eixo ${axis} ${distance} cm!`;
-          send("ender3/moveAxis", { axis,distance });
-      }else {
-          speakOutput = 
-            `<speak>
+
+    let speakOutput;
+    if (
+      (axis === "X" || axis === "Y" || axis === "Z" || axis === "F") &&
+      distance >= 0 &&
+      distance <= 5
+    ) {
+      axis === "F"
+        ? (speakOutput = `Fazendo extrusão de filamento em ${distance} cm!`)
+        : (speakOutput = `Movendo eixo ${axis} ${distance} cm!`);
+
+      send("ender3/moveAxis", { axis, distance });
+    } else {
+      speakOutput = `<speak>
                 <say-as interpret-as="interjection">oxênte</say-as>!
-            </speak>`
-      }
-   
+                Isso é perigoso!
+            </speak>`;
+    }
+
     return handlerInput.responseBuilder
       .speak(speakOutput)
       .reprompt("Algo mais?")
@@ -71,26 +78,33 @@ const MoveAxisNegativeIntentHandler = {
   canHandle(handlerInput) {
     return (
       Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
-      Alexa.getIntentName(handlerInput.requestEnvelope) === "MoveAxisNegativeIntent"
+      Alexa.getIntentName(handlerInput.requestEnvelope) ===
+        "MoveAxisNegativeIntent"
     );
   },
   handle(handlerInput) {
-    const axis =
-      handlerInput.requestEnvelope.request.intent.slots.axis.value;
+    const axis = handlerInput.requestEnvelope.request.intent.slots.axis.value;
     const distance =
       handlerInput.requestEnvelope.request.intent.slots.distance.value;
-      
-      let speakOutput;
-      if( (axis === "X" || axis === "Y" || axis === "Z") && ( distance >= 1 && distance <= 5)  ){
-          speakOutput = `Movendo eixo ${axis} menos ${distance} cm`;
-          send("ender3/moveAxis", { axis, distance:-distance });
-      }else {
-          speakOutput = 
-            `<speak>
+
+    let speakOutput;
+    if (
+      (axis === "X" || axis === "Y" || axis === "Z" || axis === "F") &&
+      distance >= 1 &&
+      distance <= 5
+    ) {
+      axis === "F"
+        ? (speakOutput = `Fazendo retração de filamento em ${distance} cm!`)
+        : (speakOutput = `Movendo eixo ${axis} menos ${distance} cm!`);
+
+      send("ender3/moveAxis", { axis, distance: -distance });
+    } else {
+      speakOutput = `<speak>
                 <say-as interpret-as="interjection">oxênte</say-as>!
-            </speak>`
-      }
-   
+                Isso é perigoso!
+            </speak>`;
+    }
+
     return handlerInput.responseBuilder
       .speak(speakOutput)
       .reprompt("Algo mais?")
@@ -138,6 +152,23 @@ const HotEndIntentHandler = {
   },
 };
 
+const MotorsOffIntentHandler = {
+  canHandle(handlerInput) {
+    return (
+      Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
+      Alexa.getIntentName(handlerInput.requestEnvelope) === "MotorsOffIntent"
+    );
+  },
+  handle(handlerInput) {
+    const speakOutput = `Desligando os motores!`;
+    send("ender3/motors", { motors: "off" });
+    return handlerInput.responseBuilder
+      .speak(speakOutput)
+      .reprompt("Algo mais?")
+      .getResponse();
+  },
+};
+
 const StatusIntentHandler = {
   canHandle(handlerInput) {
     return (
@@ -166,7 +197,7 @@ const CoolDownIntentHandler = {
   },
   handle(handlerInput) {
     send("ender3/CoolDown", { cmd: "CoolDown" });
-    const speakOutput = "Esfriando impressora 3d!"
+    const speakOutput = "Esfriando impressora 3d!";
     return (
       handlerInput.responseBuilder
         .speak(speakOutput)
@@ -200,12 +231,11 @@ const HomeAxisIntentHandler = {
   canHandle(handlerInput) {
     return (
       Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
-      Alexa.getIntentName(handlerInput.requestEnvelope) === 'HomeAxisIntent'
+      Alexa.getIntentName(handlerInput.requestEnvelope) === "HomeAxisIntent"
     );
   },
   handle(handlerInput) {
-      
-    const axis = handlerInput.requestEnvelope.request.intent.slots.axis.value;  
+    const axis = handlerInput.requestEnvelope.request.intent.slots.axis.value;
     send("ender3/homeAxis", { axis });
     const speakOutput = `Fazendo home do eixo ${axis}!`;
 
@@ -350,6 +380,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     HomeAxisIntentHandler,
     StatusIntentHandler,
     HotBedIntentHandler,
+    MotorsOffIntentHandler,
     HotEndIntentHandler,
     CoolDownIntentHandler,
     AutoHomeIntentHandler,

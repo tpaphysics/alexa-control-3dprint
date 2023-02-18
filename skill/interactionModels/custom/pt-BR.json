@@ -5,9 +5,7 @@
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
-          "samples": [
-            "não"
-          ]
+          "samples": ["não"]
         },
         {
           "name": "AMAZON.HelpIntent",
@@ -71,9 +69,7 @@
               "type": "AMAZON.FOUR_DIGIT_NUMBER"
             }
           ],
-          "samples": [
-            "{axis} {distance}"
-          ]
+          "samples": ["{axis} {distance}"]
         },
         {
           "name": "MoveAxisNegativeIntent",
@@ -87,26 +83,17 @@
               "type": "AMAZON.FOUR_DIGIT_NUMBER"
             }
           ],
-          "samples": [
-            "{axis} menos {distance}"
-          ]
+          "samples": ["{axis} menos {distance}"]
         },
         {
           "name": "AutoHomeIntent",
           "slots": [],
-          "samples": [
-            "fazer auto home",
-            "auto home"
-          ]
+          "samples": ["fazer auto home", "auto home"]
         },
         {
           "name": "StatusIntent",
           "slots": [],
-          "samples": [
-            "informações",
-            "status",
-            "informar status"
-          ]
+          "samples": ["informações", "status", "informar status"]
         },
         {
           "name": "HomeAxisIntent",
@@ -116,15 +103,23 @@
               "type": "VOGAL"
             }
           ],
-          "samples": [
-            "home do eixo {axis}",
-            "home {axis}"
-          ]
+          "samples": ["home do eixo {axis}", "home {axis}"]
+        },
+        {
+          "name": "MotorsOffIntent",
+          "slots": [],
+          "samples": ["motores off", "motores desligar", "desligar motores"]
         }
       ],
       "types": [
         {
+          "name": "VOGAL",
           "values": [
+            {
+              "name": {
+                "value": "f"
+              }
+            },
             {
               "name": {
                 "value": "z"
@@ -140,11 +135,9 @@
                 "value": "x"
               }
             }
-          ],
-          "name": "VOGAL"
+          ]
         }
       ]
     }
-  },
-  "version": "27"
+  }
 }
