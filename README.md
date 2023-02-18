@@ -63,25 +63,42 @@ Você poderá dizer:
 - `z -2`
 - `OBS: limite máximo de 5cm para não estragar os motores!`
 
-2. Para fazer Auto Home, diga:
+2. Para fazer extrusão de filamento, diga:
+
+- `F 4`
+- `F 3`
+- `F 1`
+- `OBS: Só ocorrerá extrusão se a temperatura do bico for maior que 200ª c`
+
+3. Para fazer retração do filamento, diga:
+
+- `F -4`
+- `F -3`
+- `F -1`
+
+4. Para fazer Auto Home, diga:
 
 - `Auto Home`
 - `Home X`
 - `Home Y`
 - `Home Z`
 
-3. Para aquecer o Hotend e Hotbed, diga:
+5. Para aquecer o Hotend e Hotbed, diga:
 
 - `Bico 200 graus`
 - `Cama 80 graus`
 
-4. Para esfriar o Hotend e Hotbed, diga:
+6. Para esfriar o Hotend e Hotbed, diga:
 
 - `Esfriar`
 
-5. Status, temperaturas, diga:
+7. Status, temperaturas, diga:
 
 - `Status`
+
+8. Desligar os mostres, diga:
+
+- `Desligar motores`
 
 ## **🌞 Considerações**
 
